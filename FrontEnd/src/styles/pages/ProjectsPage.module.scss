@@ -1,0 +1,201 @@
+@import '../variables';
+
+body {
+    overflow-y: auto;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.containerNewProject {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.containerHeader {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 130px;
+    margin-bottom: 130px;
+}
+
+.containerProjects {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    margin-left: 46px;
+    min-width: 354px;
+    margin-bottom: 150px;
+    padding-bottom: 20px;
+    height: auto;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.contentProject {
+    display: flex;
+    gap: 32px;
+    width: 100%;
+    height: 82vh;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 0 50;
+
+    mask-image: linear-gradient(to right,
+            transparent 0px,
+            $color-bg-default 60px,
+            $color-bg-default calc(100% - 60px),
+            transparent 100%);
+
+    -webkit-mask-image: linear-gradient(to right,
+            transparent 0px,
+            $color-bg-default 60px,
+            $color-bg-default calc(100% - 60px),
+            transparent 100%);
+}
+
+.textHeader {
+    font-size: 20;
+}
+
+.textDescription {
+    font-size: 14;
+    margin-top: 18px;
+}
+
+.buttonAdd {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 214px;
+    height: 215.4px;
+    border-radius: 31px;
+    padding: 1px;
+    overflow: hidden;
+    background: linear-gradient(to bottom, #18181e00 25%, #2B2B37 75%);
+
+    .containerAdd svg g {
+        fill: rgb(217, 217, 217);
+        transition: fill 0.25s ease, opacity 0.25s ease;
+    }
+
+    &:hover .containerAdd svg g {
+        opacity: 1;
+        fill: $color-primary;
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: inherit;
+        background: $color-primary;
+        opacity: 0;
+        transition: opacity 0.25s ease;
+        z-index: 0;
+    }
+
+    &:hover::before {
+        opacity: 1;
+    }
+
+    .containerAdd {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 84%;
+        border-radius: 30px;
+        background: linear-gradient(to bottom, #141417 10%, #1C1C20 90%);
+        padding: 1rem;
+    }
+}
+
+.addListToBoard {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 214px;
+    min-height: 214px;
+    max-width: 214px;
+    max-height: 214px;
+    border-radius: 30px;
+    padding: 2px;
+    overflow: hidden;
+    background: radial-gradient(circle at right center, #18181e00 65%, #2B2B37 100%);
+    cursor: pointer;
+
+    &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 30px;
+        background: radial-gradient(circle at right center, $color-primary 0%, $color-primary 100%);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        z-index: 0;
+    }
+
+    .containerAddListToBoard {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 86%;
+        border-radius: 29px;
+        background: radial-gradient(circle at right top, #141417 68%, #1C1C20 100%);
+        padding: 1rem;
+        position: relative;
+        z-index: 1;
+
+        svg rect {
+            transition: fill 0.3s ease;
+        }
+    }
+
+    &:hover:before {
+        opacity: 1;
+    }
+
+    &:hover .containerAddListToBoard svg rect {
+        fill: $color-primary;
+    }
+}
+
+.containerAddProject {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 331px;
+    min-height: 32px;
+    max-height: 32px;
+    border-radius: 8px;
+    border: $color-primary 2px solid;
+    color: $color-primary;
+    font-size: 14px;
+    transition: opacity 0.25s ease;
+    cursor: pointer;
+    opacity: 0.05;
+
+    span {
+        margin-left: 10px;
+    }
+
+    &:hover {
+        opacity: 1;
+    }
+}

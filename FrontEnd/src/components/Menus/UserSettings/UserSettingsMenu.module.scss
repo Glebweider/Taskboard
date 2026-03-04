@@ -1,0 +1,275 @@
+@import '@Styles/variables';
+
+
+.container {
+    position: fixed;
+    transform: translateX(-80%);
+    margin-left: 375px;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: transform 0.4s ease, opacity 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 18 28;
+    z-index: 10;
+}
+
+.selectorContainerWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.selectorContainer {
+    width: 84%;
+}
+
+.labels {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 6px;
+
+    span {
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        cursor: pointer;
+        font-size: 14px;
+        color: $color-hr;
+        transition: color 0.2s ease;
+
+        &.active {
+            color: $color-accsess;
+            font-weight: 600;
+        }
+    }
+}
+
+.line {
+    position: relative;
+    height: 3px;
+    background: $color-hr;
+    border-radius: 25px;
+    overflow: hidden;
+}
+
+.selector {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background: $color-accsess;
+    border-radius: 25px;
+    transition: transform 0.3s ease;
+}
+
+.modalInputFieldContainer {
+    display: flex;
+    align-items: center;
+    background-color: $color-bg-modal;
+    min-height: 38px;
+    border-radius: 8px;
+    padding: 0 15;
+}
+
+.inputField {
+    font-size: 14;
+    font-weight: 600;
+    color: $color-primary;
+    width: 100%;
+}
+
+hr {
+    width: 100%;
+    min-height: 1px;
+    max-height: 1px;
+    background-color: $color-hr;
+    border-radius: 5px;
+}
+
+.open {
+    transform: translateX(0);
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    background: linear-gradient($color-bg-default 0%, $color-bg-modal 100%);
+    border-radius: 12px;
+    margin-top: 250px;
+    width: 344px;
+    height: 330px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: $color-primary;
+    font-size: 20;
+
+    svg {
+        width: 16px;
+        height: 16px;
+        cursor: pointer;
+    }
+}
+
+.wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: auto;
+    padding: 10px 14px;
+    background-color: $color-bg-modal;
+    transition: background-color 0.20s ease;
+    border-radius: 8px;
+    cursor: pointer;
+    user-select: none;
+
+    &:hover {
+        background-color: #17181b;
+    }
+}
+
+.label {
+    color: #FFF;
+    font-size: 16px;
+    font-weight: 200;
+    flex: 1;
+}
+
+.arrow {
+    transform: rotate(0);
+    transition: transform 0.20s ease;
+
+    &.active {
+        transform: rotate(-90deg);
+    }
+}
+
+.dropdown {
+    position: absolute;
+    top: calc(100% + 4px);
+    left: 0;
+    width: 100%;
+    background: $color-bg-modal;
+    border-radius: 8px;
+    overflow: hidden;
+    z-index: 50;
+}
+
+.item {
+    display: flex;
+    align-items: center;
+    padding: 14px 20px;
+    color: #e4e4e4;
+    font-size: 14;
+    font-weight: 200;
+    cursor: pointer;
+    transition: background-color 0.15s ease;
+
+    span {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background-color: #e0083a;
+        margin-right: 12px;
+    }
+
+    &:hover {
+        background-color: #1a1a1d;
+    }
+}
+
+.warningText {
+    font-style: italic;
+    width: 275px;
+    font-size: 11;
+    color: $color-hr;
+    margin-left: 12px;
+    margin-bottom: 35px;
+}
+
+.containerRoles {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 5px;
+}
+
+.contentRole {
+    display: flex;
+    align-items: center;
+
+    span {
+        margin-left: 12px;
+        font-size: 15;
+        color: $color-primary;
+    }
+}
+
+.roles {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 12px;
+}
+
+.role {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 105px;
+    height: 26px;
+    color: $color-hr;
+    border: 1px #fff solid;
+    border-color: $color-hr;
+    transition: border-color 0.25s ease, color 0.25s ease;
+    border-radius: 8px;
+    cursor: pointer;
+
+    &.active {
+        color: $color-accsess;
+        border-color: $color-accsess;
+    }
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+@keyframes shake {
+    0% {
+        transform: translateX(0);
+    }
+
+    20% {
+        transform: translateX(-5px);
+    }
+
+    40% {
+        transform: translateX(5px);
+    }
+
+    60% {
+        transform: translateX(-5px);
+    }
+
+    80% {
+        transform: translateX(5px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.shake {
+    animation: shake 0.4s ease;
+}

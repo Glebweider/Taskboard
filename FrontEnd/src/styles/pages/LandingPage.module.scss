@@ -1,0 +1,335 @@
+@import '../variables';
+
+
+.app {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+	color: #ffffff;
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	background: linear-gradient(-60deg, #1a1c40, #282a57, #3b3c73, #1a1c40);
+	animation: fadeSlideIn 1.2s ease forwards;
+	overflow-x: hidden;
+	opacity: 0;
+}
+
+@keyframes fadeSlideIn {
+	0% {
+		opacity: 0;
+		transform: translateY(20px);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+.header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 15px 40px;
+	background: rgba(0, 0, 0, 0.4);
+	backdrop-filter: blur(6px);
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.logoContainer {
+	font-size: 28px;
+	font-weight: bold;
+	animation: logoFadeIn 1s ease;
+	display: flex;
+	align-items: center;
+
+	h1 {
+		margin-left: 15px;
+	}
+}
+
+.logo {
+	height: 48px;
+}
+
+@keyframes logoFadeIn {
+	0% {
+		opacity: 0;
+		transform: translateY(-10px);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+.nav {
+	display: flex;
+	align-items: center;
+}
+
+.nav a {
+	margin-left: 20px;
+	color: #ffffff;
+	text-decoration: none;
+	font-weight: 500;
+	position: relative;
+}
+
+.nav a::after {
+	content: "";
+	position: absolute;
+	width: 0%;
+	height: 2px;
+	left: 0;
+	bottom: -3px;
+	background-color: #7f5af0;
+	transition: width 0.3s;
+}
+
+.nav a:hover::after {
+	width: 100%;
+}
+
+.authInNavbar {
+	margin-left: 20px;
+	opacity: 0;
+	transform: translateY(-10px);
+	transition: opacity 0.5s ease, transform 0.5s ease;
+	display: inline-block;
+}
+
+.authInNavbar.show {
+	opacity: 1;
+	transform: translateY(0);
+}
+
+.authButtonSmall {
+	background: #7f5af0;
+	color: white;
+	border: none;
+	padding: 6px 14px;
+	border-radius: 20px;
+	cursor: pointer;
+	font-size: 14px;
+	transition: background-color 0.3s;
+}
+
+.authButtonSmall:hover {
+	background-color: #6843e0;
+}
+
+.main {
+	flex: 1;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 40px;
+	text-align: center;
+}
+
+.slide {
+	max-width: 600px;
+	position: relative;
+}
+
+.slideLeft {
+	animation: slideLeftAnim 0.6s ease;
+}
+
+.slideRight {
+	animation: slideRightAnim 0.6s ease;
+}
+
+@keyframes slideLeftAnim {
+	from {
+		opacity: 0;
+		transform: translateX(100px);
+	}
+
+	to {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
+@keyframes slideRightAnim {
+	from {
+		opacity: 0;
+		transform: translateX(-100px);
+	}
+
+	to {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
+.slideImage {
+	max-width: 100%;
+	border-radius: 12px;
+	margin-bottom: 16px;
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.dataTitle {
+	font-size: 28px;
+	margin-bottom: 12px;
+}
+
+.dataInfo {
+	font-size: 16px;
+	margin-bottom: 16px;
+	line-height: 1.5;
+}
+
+.pagination {
+	display: flex;
+	justify-content: center;
+	margin-bottom: 16px;
+}
+
+.dot {
+	height: 10px;
+	width: 10px;
+	margin: 0 5px;
+	background-color: #bbb;
+	border-radius: 50%;
+	display: inline-block;
+	cursor: pointer;
+	transition: background-color 0.3s;
+}
+
+.active {
+	background-color: #7f5af0;
+}
+
+.authButton {
+	background-color: #7f5af0;
+	color: white;
+	border: none;
+	padding: 12px 24px;
+	font-size: 16px;
+	border-radius: 25px;
+	cursor: pointer;
+	transition: background-color 0.3s;
+	margin-bottom: 10px;
+}
+
+.authButton:hover {
+	background-color: #6843e0;
+}
+
+.controls {
+	display: flex;
+	justify-content: center;
+	gap: 10px;
+}
+
+.controlButton {
+	background: rgba(255, 255, 255, 0.1);
+	color: #ffffff;
+	border: 1px solid #ffffff50;
+	padding: 8px 16px;
+	border-radius: 20px;
+	cursor: pointer;
+	transition: background-color 0.3s;
+}
+
+.controlButton:hover:not(:disabled) {
+	background: rgba(255, 255, 255, 0.2);
+}
+
+.controlButton:disabled {
+	opacity: 0.4;
+	cursor: default;
+}
+
+.footerTab {
+	position: fixed;
+	bottom: 25px;
+	right: 20px;
+	background: #7f5af0;
+	color: white;
+	border-radius: 25px;
+	cursor: pointer;
+	font-size: 14px;
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+	padding: 8px 16px;
+	transition: max-width 0.4s ease, background-color 0.3s ease;
+	max-width: 80px;
+	white-space: nowrap;
+}
+
+.footerTab.open {
+	max-width: 250px;
+}
+
+.footerTab:hover {
+	background-color: #6843e0;
+}
+
+.footerContent {
+	font-size: 12px;
+	text-align: left;
+	opacity: 0;
+	transform: translateX(10px);
+	animation: fadeInSlide 0.4s forwards;
+}
+
+@keyframes fadeInSlide {
+	from {
+		opacity: 0;
+		transform: translateX(10px);
+	}
+
+	to {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
+.footerTab:not(.open) .footerContent {
+	display: none;
+}
+
+
+/* 📱 Мобильная версия */
+@media (max-width: 768px) {
+
+	// body {
+	// 	overflow-y: auto !important;
+	// 	-webkit-overflow-scrolling: touch;
+	// }
+
+	.header {
+		padding: 20px;
+	}
+
+	.main {
+		padding: 35px 20px;
+		flex: 1;
+		align-items: flex-start;
+	}
+
+	.authButton {
+		margin-bottom: 15px;
+	}
+
+	.controlButton {
+		padding: 12px 32px;
+		border-radius: 50px;
+	}
+
+	.authButtonSmall {
+		padding: 12px 15px;
+	}
+
+	.footerTab {
+		font-size: 16px;
+	}
+
+	.footerContent {
+		font-size: 14px;
+	}
+}

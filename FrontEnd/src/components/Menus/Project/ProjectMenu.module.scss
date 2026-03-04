@@ -1,0 +1,84 @@
+@import '../../../styles/variables';
+
+
+.container {
+    position: absolute;
+    transform: translateY(-80%);
+    margin-left: 18px;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: transform 0.4s ease, opacity 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 15 13;
+    z-index: 20;
+}
+
+.open {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    background-color: $color-bg-modal;
+    border-radius: 12px;
+    margin-top: 18px;
+    width: 269px;
+    box-shadow: 0 0 20px 2px $color-hr;
+}
+
+.content {
+    display: flex;
+    align-items: center;
+    height: 50px;
+    max-width: 100%;
+    border-radius: 12px;
+    background-color: $color-bg-secondary;
+    cursor: pointer;
+    transition: background-color .25s, color .25s;
+
+    svg,
+    img {
+        margin-left: 20px;
+        margin-right: 15px;
+        transition: fill .25s;
+    }
+
+    span {
+        color: $color-primary;
+        font-size: 16;
+        transition: color .25s;
+    }
+
+    &:hover {
+        background-color: $color-hr;
+    }
+}
+
+.warningContent {
+    background-color: rgba(0, 0, 0, 0);
+    border: 2px solid $color-error;
+    transition: background-color .25s, border-color .25s;
+
+    span {
+        color: $color-error;
+        transition: color .25s;
+    }
+
+    svg path {
+        transition: fill .25s;
+    }
+
+    &:hover {
+        background-color: $color-error;
+
+        span {
+            color: $color-bg-modal;
+        }
+
+        svg path {
+            fill: $color-bg-modal;
+        }
+    }
+}

@@ -1,0 +1,35 @@
+@import '@Styles/variables';
+
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color .25s, border-color .25s, color .25s;
+    border-radius: 8px;
+    height: 24px;
+    width: 90px;
+    font-size: 12;
+    color: #000;
+    cursor: pointer;
+
+    &.asign {
+        border: 2px solid $color-accent;
+        color: $color-accent;
+
+        &:hover {
+            background-color: $color-accent;
+            color: $color-bg-modal;
+        }
+    }
+
+    &.cancel {
+        border: 2px solid $color-error;
+        color: $color-error;
+
+        &:hover {
+            background-color: $color-error;
+            color: $color-bg-modal;
+        }
+    }
+}

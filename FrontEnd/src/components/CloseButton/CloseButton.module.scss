@@ -1,0 +1,20 @@
+.button {
+    cursor: pointer;
+    fill: rgba($color: #000000, $alpha: 0);
+    transition: fill .4s;
+
+    line {
+        transition: stroke .4s;
+        stroke: white
+    }
+
+    &:hover {
+        transition: fill .4s;
+        fill: #D4D4D4;
+
+        line {
+            transition: stroke .4s;
+            stroke: black;
+        }
+    }
+}

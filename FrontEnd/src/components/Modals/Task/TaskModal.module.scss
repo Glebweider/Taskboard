@@ -1,0 +1,203 @@
+@import '../../../styles/_variables.scss';
+
+.modalContent {
+    background: $color-bg-secondary;
+    border-radius: 12px;
+    width: 650px;
+    min-height: 315px;
+    display: flex;
+    transform: translateY(40px);
+    opacity: 0;
+    animation: modalSlideUp 0.35s ease forwards;
+}
+
+@keyframes modalSlideUp {
+    from {
+        transform: translateY(40px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.modalContentContainer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+.circle {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    box-sizing: border-box;
+
+    &.red {
+        border: 2px solid $color-error;
+    }
+
+    &.orange {
+        border: 2px solid $color-orange;
+    }
+
+    &.green {
+        border: 2px solid $color-accsess;
+    }
+
+    &.disable {
+        border: 2px solid $color-hr;
+    }
+}
+
+.description {
+    color: $color-primary;
+    font-size: 15;
+    margin-left: 42px;
+    margin-top: 24px;
+}
+
+.modalHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15 30;
+    width: auto;
+    max-height: 30px;
+    background-color: $color-bg-modal;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+
+    a {
+        margin-left: 8px;
+        font-size: 16;
+    }
+}
+
+.modalData {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 45px;
+    border-radius: 8px;
+    padding: 0 15 0 15;
+    width: 230px;
+
+    hr {
+        width: 100%;
+    }
+}
+
+.rightModalData {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+
+    img {
+        width: 24px;
+        height: 24px;
+    }
+}
+
+.modalInputFieldContainer {
+    margin-left: 7px;
+    display: flex;
+    align-items: center;
+}
+
+.inputField {
+    font-size: 16;
+    color: #FFFFFF;
+    width: 100%;
+}
+
+.user {
+    &.red img {
+        border: 2px solid $color-error;
+    }
+
+    &.orange img {
+        border: 2px solid $color-orange;
+    }
+
+    &.green img {
+        border: 2px solid $color-accsess;
+    }
+
+    &.disable img {
+        border: 2px solid $color-hr;
+    }
+}
+
+.dueDate {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11;
+    color: $color-bg-modal;
+    background-color: $color-orange;
+    height: 18px;
+    width: 74px;
+    height: 22px;
+    border-radius: 4px;
+
+    &.red {
+        background-color: $color-error;
+    }
+
+    &.orange {
+        background-color: $color-orange;
+    }
+
+    &.green {
+        background-color: $color-accsess;
+    }
+}
+
+.descriptionBox {
+    margin: 0 22 22 22px;
+    border-radius: 12px;
+    word-wrap: break-word;
+
+    hr {
+        margin-top: 8px;
+    }
+
+    div {
+        outline: none !important;
+        overflow-x: auto;
+
+        p {
+            margin-top: 0.3rem;
+            margin-bottom: 0.3rem;
+            font-size: 14px;
+        }
+
+        ul {
+            margin-left: 20px;
+            list-style: disc;
+        }
+
+        ol {
+            margin-left: 20px;
+            list-style: decimal;
+        }
+
+        img {
+            display: block;
+            min-width: 70%;
+            max-width: 70%;
+            margin-top: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+    }
+}
+
+.buttonCloseContainer {
+    height: 30%;
+    margin-left: 25px;
+}

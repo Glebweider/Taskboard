@@ -1,0 +1,185 @@
+@import '../../../styles/_variables.scss';
+
+
+.modalContent {
+    background: $color-bg-modal;
+    border-radius: 12px;
+    width: 310px;
+    min-height: 344px;
+    padding: 32 30;
+    display: flex;
+    transform: translateY(40px);
+    opacity: 0;
+    animation: modalSlideUp 0.35s ease forwards;
+}
+
+@keyframes modalSlideUp {
+    from {
+        transform: translateY(40px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.modalContentContainer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+
+    span {
+        font-size: 24;
+        color: #FFF;
+    }
+}
+
+.picker {
+    width: 100%;
+    color: #e0b180;
+    font-family: sans-serif;
+    border-radius: 8px;
+    user-select: none;
+    margin-top: 25px;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    color: #FFF;
+
+    button {
+        color: $color-primary;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+    span {
+        font-size: 16;
+        font-weight: 500;
+        margin-left: 8px;
+        margin-right: 8px;
+    }
+}
+
+.weekdays {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    margin-top: 14px;
+
+    span {
+        text-align: center;
+        font-size: 11px;
+        color: #EBEBF5;
+        opacity: 0.3;
+        font-weight: 400;
+    }
+}
+
+.days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 4px;
+    margin-top: 6px;
+
+    span {
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        border-radius: 50%;
+        font-size: 14px;
+        font-weight: 600;
+        transition: background-color 0.12s ease, color 0.12s ease, transform 0.08s ease;
+    }
+
+    .empty {
+        pointer-events: none;
+        background-color: transparent;
+        color: transparent;
+        cursor: default;
+    }
+
+    .inRange {
+        color: #e0b180;
+    }
+
+    .today {
+        background-color: #e0b180;
+        color: #0e0e0e;
+        border-radius: 50%;
+    }
+
+    .selected {
+        background-color: #e0b180;
+        color: #0e0e0e;
+        border-radius: 50%;
+    }
+
+    .disabledDay {
+        opacity: 0.3;
+        pointer-events: none;
+        cursor: default;
+    }
+}
+
+
+.timeBlock {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 12px;
+
+    span {
+        color: #FFFFFF;
+        font-size: 16;
+        font-weight: 600;
+    }
+}
+
+.timeInput {
+    display: flex;
+    gap: 10px;
+
+    input {
+        background: #252525;
+        border: none;
+        padding: 4px 6px;
+        color: #FFF;
+        border-radius: 6px;
+    }
+
+    input[type="time"]::-webkit-calendar-picker-indicator {
+        display: none;
+    }
+}
+
+.ampm {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #3b3b3b;
+    border-radius: 9px;
+    gap: 0;
+    padding: 5px;
+
+    button {
+        background-color: #3b3b3b;
+        border: none;
+        padding: 3px 8px;
+        color: #FFF;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.15s ease, color 0.15s ease;
+    }
+
+    .active {
+        background-color: #636366;
+        color: #FFF;
+    }
+}

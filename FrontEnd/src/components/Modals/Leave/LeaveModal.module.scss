@@ -1,0 +1,113 @@
+@import '../../../styles/_variables.scss';
+
+.modalContent {
+    background: $color-bg-modal;
+    border-radius: 8px;
+    padding: 15 57 20 57;
+    width: 198px;
+    height: 131px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(40px);
+    opacity: 0;
+    animation: modalSlideUp 0.35s ease forwards;
+}
+
+@keyframes modalSlideUp {
+    from {
+        transform: translateY(40px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.modalContentContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 380px;
+}
+
+.modalHeader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+
+    a {
+        width: 161px;
+        margin-top: 10px;
+        font-size: 14;
+        text-align: center;
+    }
+}
+
+.modalData {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    background-color: $color-bg-input;
+    height: 45px;
+    border-radius: 8px;
+    padding: 0 15 0 15;
+
+    hr {
+        width: 100%;
+    }
+}
+
+.modalButtons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 13px;
+}
+
+.closeButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12;
+    color: #000;
+    border-radius: 8px;
+    width: 90px;
+    height: 24px;
+    cursor: pointer;
+
+    border: 2px solid $color-error;
+    transition: background-color .25s, border-color .25s, color .25s;
+    color: $color-error;
+
+    &:hover {
+        background-color: $color-error;
+        color: $color-bg-modal;
+    }
+}
+
+.leaveButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12;
+    color: #000;
+    border-radius: 8px;
+    width: 90px;
+    height: 24px;
+    cursor: pointer;
+
+    border: 2px solid $color-accent;
+    transition: background-color .25s, border-color .25s, color .25s;
+    color: $color-accent;
+
+    &:hover {
+        background-color: $color-accent;
+        color: $color-bg-modal;
+    }
+}

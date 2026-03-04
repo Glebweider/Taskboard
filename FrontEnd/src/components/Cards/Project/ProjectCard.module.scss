@@ -1,0 +1,80 @@
+@import '@Styles/variables';
+
+
+.projectContainer {
+    display: flex;
+    flex-direction: column;
+    background-color: $color-bg-modal;
+    min-width: 275px;
+    max-width: 275px;
+    border-radius: 12px;
+    padding: 20 30;
+    z-index: 0;
+}
+
+.projectBoardsWrapper {
+    overflow: hidden;
+    transition: height 0.3s ease;
+    margin-right: -30px;
+}
+
+.projectBoardsInner {
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+    padding-top: 20px;
+}
+
+.projectHeader {
+    display: flex;
+    justify-content: space-between;
+    color: $color-primary;
+    cursor: pointer;
+}
+
+.headerLeft {
+    display: flex;
+    align-items: center;
+}
+
+.projectName {
+    font-size: 16px;
+    margin-left: 8px;
+}
+
+.arrowIcon {
+    transform: rotate(-90deg);
+    transition: transform 0.25s ease;
+}
+
+.active {
+    transform: rotate(0deg);
+}
+
+.containerAddBoard {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 275px;
+    min-height: 32px;
+    max-height: 32px;
+    border-radius: 8px;
+    border: $color-primary 2px solid;
+    color: $color-primary;
+    font-size: 14px;
+    transition: opacity 0.2s ease;
+    cursor: pointer;
+    opacity: 0.05;
+
+    &.active {
+        opacity: 1;
+    }
+
+    span {
+        margin-left: 10px;
+    }
+
+    &:hover {
+        opacity: 1;
+    }
+}

@@ -1,0 +1,91 @@
+@import '@Styles/variables';
+
+
+.boardWrapper {
+    position: relative;
+}
+
+.containerBoard {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    width: 305px;
+    min-height: 45px;
+    max-height: 45px;
+
+    div {
+        display: flex;
+        align-items: center;
+
+        span {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            margin-left: 30px;
+        }
+
+        h1 {
+            margin-left: 10px;
+            font-size: 14px;
+            color: #fff;
+        }
+    }
+
+    img {
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        margin-right: 30px;
+        transition: opacity .35s, visibility .35s;
+        cursor: pointer;
+        transform: rotate(0deg);
+        transition: transform 0.35s ease;
+
+        &:hover {
+            transform: rotate(160deg);
+        }
+    }
+
+    &:hover {
+        img {
+            opacity: 1;
+            visibility: visible;
+            pointer-events: auto;
+        }
+    }
+}
+
+.containerActiveBoard {
+    position: relative;
+    min-height: 45px;
+    overflow: visible;
+
+    &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        top: -15px;
+        height: 74px;
+        width: 305px;
+        background-image: url('data:image/svg+xml,%3Csvg viewBox="0 0 305 74" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M309.5 74H305.052C305.079 73.6355 305.094 73.2672 305.094 72.8955C305.094 66.6473 301.114 61.3322 295.558 59.3584H12C5.37258 59.3584 3.38246e-07 53.9858 0 47.3584V26.3584C0 19.731 5.37258 14.3584 12 14.3584H290.775C298.683 14.3584 305.094 7.92973 305.094 0H309.5V74Z" fill="%23141417"/%3E%3C/svg%3E');
+        background-repeat: no-repeat;
+        background-position: left center;
+        background-size: 100% 100%;
+        z-index: -1;
+    }
+
+    img {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        cursor: pointer;
+        transform: rotate(0deg);
+        transition: transform 0.35s ease;
+
+        &:hover {
+            transform: rotate(160deg);
+        }
+    }
+}

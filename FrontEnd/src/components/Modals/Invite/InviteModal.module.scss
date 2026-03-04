@@ -1,0 +1,106 @@
+@import '../../../styles/variables';
+
+
+.container {
+    position: absolute;
+    transform: translateY(-80%);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: transform 0.4s ease, opacity 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 15 13;
+}
+
+@keyframes modalSlideUp {
+    from {
+        transform: translateY(40px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.content {
+    background: $color-bg-modal;
+    border-radius: 8px;
+    padding: 30 45;
+    width: 210px;
+    height: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transform: translateY(40px);
+    opacity: 0;
+    animation: modalSlideUp 0.35s ease forwards;
+
+    text {
+        font-size: 16;
+        color: $color-accent;
+        font-weight: 500;
+    }
+
+    span {
+        margin-top: 8px;
+        font-size: 14;
+        color: $color-primary;
+        font-weight: 400;
+    }
+}
+
+.modalContentContainerFooter {
+    display: flex;
+    justify-content: center;
+    background: $color-bg-modal;
+    border-radius: 8px;
+    gap: 18px;
+    margin-top: 18px;
+}
+
+.closeButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12;
+    color: #000;
+    border-radius: 8px;
+    width: 90px;
+    height: 24px;
+    cursor: pointer;
+
+    border: 2px solid $color-error;
+    transition: background-color .25s, border-color .25s, color .25s;
+    color: $color-error;
+
+    &:hover {
+        background-color: $color-error;
+        color: $color-bg-modal;
+    }
+}
+
+.applyButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12;
+    color: #000;
+    border-radius: 8px;
+    width: 90px;
+    height: 24px;
+    cursor: pointer;
+
+    border: 2px solid $color-accent;
+    transition: background-color .25s, border-color .25s, color .25s;
+    color: $color-accent;
+
+    &:hover {
+        background-color: $color-accent;
+        color: $color-bg-modal;
+    }
+}

@@ -1,0 +1,131 @@
+@import '@Styles/variables';
+
+.modalContent {
+    width: 512px;
+    min-height: 768px;
+    max-height: 768px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transform: translateY(40px);
+    opacity: 0;
+    animation: modalSlideUp 0.35s ease forwards;
+}
+
+@keyframes modalSlideUp {
+    from {
+        transform: translateY(40px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.modalContentContainerHeader {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    height: 697px;
+    padding-left: 40px;
+    padding-right: 40px;
+    background: $color-bg-modal;
+    border-radius: 12px;
+    gap: 30px;
+}
+
+.modalContentContainerFooter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: $color-bg-modal;
+    height: 60px;
+    border-radius: 8px;
+    gap: 18px;
+}
+
+.modalHeader {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    margin-top: 38px;
+    height: 40px;
+    color: #FFF;
+
+    h1 {
+        font-size: 20;
+    }
+
+    span {
+        font-size: 10;
+    }
+}
+
+.inputFieldContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: $color-bg-input;
+    height: 45px;
+    width: auto;
+    border-radius: 12px;
+    padding-left: 12px;
+    padding-right: 12px;
+
+    svg {
+        margin-left: 14px;
+        margin-right: 4px;
+    }
+}
+
+.inputFieldContent {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.inputField {
+    padding-left: 8px;
+    font-size: 14;
+    height: 26px;
+    color: #FFFFFF;
+    width: 100%;
+}
+
+.members {
+    display: flex;
+    gap: 28px;
+    overflow-x: auto;
+    padding-bottom: 4px;
+    flex-wrap: wrap;
+}
+
+.member {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 64px;
+    min-width: 64px;
+    min-height: 80px;
+    max-height: 80px;
+    opacity: 0.25;
+    transition: opacity .3s ease;
+
+    span {
+        text-align: center;
+        font-size: 12;
+        color: #FFF;
+        margin-top: 8px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        width: 100%;
+    }
+}
+
+.selected {
+    opacity: 1;
+    transition: opacity .4s ease;
+}

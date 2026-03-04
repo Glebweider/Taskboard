@@ -1,0 +1,60 @@
+{
+  "compilerOptions": {
+    "jsx": "react",
+    "module": "commonjs",
+    "declaration": true,
+    "removeComments": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
+    "resolveJsonModule": true,
+    "target": "ES2021",
+    "sourceMap": true,
+    "outDir": "./dist",
+    "baseUrl": "./",
+    "incremental": true,
+    "skipLibCheck": true,
+    "strictNullChecks": false,
+    "noImplicitAny": false,
+    "strictBindCallApply": false,
+    "forceConsistentCasingInFileNames": false,
+    "noFallthroughCasesInSwitch": false,
+    "paths": {
+      "@Constants": ["./src/common/constants/index"],
+      "@Constants/*": ["./src/common/constants/*"],
+
+      "@Decorators": ["./src/common/decorators/index"],
+      "@Decorators/*": ["./src/common/decorators/*"],
+
+      "@Exceptions": ["./src/common/exceptions/index"],
+      "@Exceptions/*": ["./src/common/exceptions/*"],
+
+      "@Interfaces": ["./src/common/interfaces/index"],
+      "@Interfaces/*": ["./src/common/interfaces/*"],
+
+      "@Middleware": ["./src/common/middleware/index"],
+      "@Middleware/*": ["./src/common/middleware/*"],
+
+      "@Models": ["./src/common/models/index"],
+      "@Models/*": ["./src/common/models/*"],
+
+      "@Plugins": ["./src/common/plugins/index"],
+      "@Plugins/*": ["./src/ommon/plugins/*"],
+
+      "@Utils": ["./src/common/utils/index"],
+      "@Utils/*": ["./src/common/utils/*"],
+
+      "@App/*": ["./src/app/*"],
+      "@Discord/*": ["./src/discord/*"],
+      "@Auth/*": ["./src/auth/*"],
+      "@User/*": ["./src/user/*"],
+      "@Project/*": ["./src/project/*"],
+      "@Redis/*": ["./src/redis/*"],
+      "@Sse/*": ["./src/sse/*"],
+      "@Activity/*": ["./src/activity/*"],
+      "@Google/*": ["./src/google/*"]
+    }
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "dist"]
+}

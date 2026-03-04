@@ -1,0 +1,81 @@
+@import '../../styles/variables';
+
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-self: flex-start;
+    min-width: 230px;
+    max-height: 94%;
+    background-color: $color-bg-modal;
+    border-radius: 12px;
+    padding: 15 25;
+}
+
+.containerData {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 36px;
+
+    .containerLeftData {
+        display: flex;
+        align-items: center;
+
+        .name {
+            margin-left: 4px;
+            font-size: 16;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 150px;
+            display: inline-block;
+        }
+    }
+}
+
+.container:active {
+    cursor: grabbing;
+}
+
+.drag {
+    cursor: grab;
+}
+
+.containerTasks {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    margin-right: -17.3px;
+    scrollbar-gutter: stable;
+}
+
+.addTaskToList {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 48px;
+    max-height: 48px;
+    border: 2px $color-bg-input solid;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    cursor: pointer;
+
+    svg rect {
+        transition: fill 0.3s ease;
+    }
+
+    &:hover {
+        background-color: $color-primary;
+        color: $color-hr;
+
+        svg rect {
+            fill: $color-hr;
+        }
+    }
+}

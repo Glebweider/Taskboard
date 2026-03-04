@@ -1,0 +1,40 @@
+import { Document } from 'mongoose';
+
+export interface IProjectActivity extends Document {
+	projectId: string;
+	type: EProjectActivityType;
+	actorId: string;        		// кто сделал
+	actorName: string;      		// имя на момент действия
+	payload?: Record<string, any>;
+	createdAt: Date;
+}
+
+export enum EProjectActivityType {
+	PROJECT_CREATED = 'PROJECT_CREATED',
+	PROJECT_UPDATED = 'PROJECT_UPDATED',
+	PROJECT_DELETED = 'PROJECT_DELETED',
+	PROJECT_INVITE_CREATED = 'PROJECT_INVITE_CREATED',
+	PROJECT_MEMBER_UPDATED = "PROJECT_MEMBER_UPDATED",
+
+	USER_JOINED = 'USER_JOINED',
+	USER_KICKED = 'USER_KICKED',
+	USER_LEAVE = 'USER_LEAVE',
+
+	BOARD_CREATED = 'BOARD_CREATED',
+	BOARD_UPDATED = 'BOARD_UPDATED',
+	BOARD_DELETED = 'BOARD_DELETED',
+	BOARD_ROLE_CHANGED = 'BOARD_ROLE_CHANGED',
+
+	LIST_CREATED = 'LIST_CREATED',
+	LIST_UPDATED = 'LIST_UPDATED',
+	LIST_DELETED = 'LIST_DELETED',
+	LIST_MOVED = 'LIST_MOVED',
+
+	CARD_CREATED = 'CARD_CREATED',
+	CARD_UPDATED = 'CARD_UPDATED',
+	CARD_DELETED = 'CARD_DELETED',
+	CARD_MOVED = 'CARD_MOVED',
+
+	CARD_MEMBER_ADDED = 'CARD_MEMBER_ADDED',
+	CARD_MEMBER_REMOVED = 'CARD_MEMBER_REMOVED',
+}

@@ -1,0 +1,106 @@
+@import '../../../styles/_variables.scss';
+
+.modalContent {
+    background: $color-bg-modal;
+    border-radius: 8px;
+    padding: 20 40 15 40;
+    width: 380px;
+    height: 130px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(40px);
+    opacity: 0;
+    animation: modalSlideUp 0.35s ease forwards;
+}
+
+@keyframes modalSlideUp {
+    from {
+        transform: translateY(40px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.modalContentContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 380px;
+}
+
+.modalHeader {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-left: 6px;
+
+    a {
+        margin-left: 8px;
+        font-size: 16;
+    }
+}
+
+.modalData {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    background-color: $color-bg-input;
+    height: 45px;
+    border-radius: 8px;
+    padding: 0 15 0 15;
+
+    hr {
+        width: 100%;
+    }
+}
+
+.modalInputFieldContainer {
+    margin-left: 5px;
+    height: 52%;
+    display: flex;
+    align-items: center;
+}
+
+.inputField {
+    font-size: 16;
+    color: #FFFFFF;
+    width: 100%;
+}
+
+.modalButtons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.closeButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12;
+    color: #000;
+    border-radius: 8px;
+    background-color: $color-error;
+    width: 90px;
+    height: 24px;
+    cursor: pointer;
+}
+
+.createButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12;
+    color: #000;
+    border-radius: 8px;
+    background-color: $color-accent;
+    width: 90px;
+    height: 24px;
+    cursor: pointer;
+}

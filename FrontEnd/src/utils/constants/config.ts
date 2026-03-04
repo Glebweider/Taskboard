@@ -1,0 +1,28 @@
+export const PROJECTS_LIMIT = 12;   // per person
+export const BOARDS_LIMIT = 16;
+export const LISTS_LIMIT = 16;
+export const TASKS_LIMIT = 150;     // Old name "cards"
+export const MEMBERS_LIMIT = 100;
+
+export const PROJECT_NAME_MIN_LENGTH = 1;
+export const PROJECT_NAME_MAX_LENGTH = 24;
+export const PROJECT_USERNAME_MIN_LENGTH = 1;
+export const PROJECT_USERNAME_MAX_LENGTH = 24;
+export const PROJECT_USER_DESCRIPTION_MIN_LENGTH = 1;
+export const PROJECT_USER_DESCRIPTION_MAX_LENGTH = 32;
+export const BOARD_NAME_MIN_LENGTH = 1;
+export const BOARD_NAME_MAX_LENGTH = 24;
+export const LIST_NAME_MIN_LENGTH = 1;
+export const LIST_NAME_MAX_LENGTH = 24;
+export const TASK_TITLE_MIN_LENGTH = 1;
+export const TASK_TITLE_MAX_LENGTH = 32;
+export const MOVE_TASK_ID_MIN_LENGTH = 1;
+export const MOVE_TASK_ID_MAX_LENGTH = 48;
+export const TASK_DESCRIPTION_MAX_LENGTH = 2048;
+export const UPDATE_CHANNEL_ID_MIN_LENGTH = 1;
+export const UPDATE_CHANNEL_ID_MAX_LENGTH = 48;
+export const TASK_FILE_MAX_SIZE = 10 * 1024 * 1024; // 10mb
+export const TASK_FILE_LIMIT = 8;
+
+/** Unique variables */
+export const TASK_MEMBER_VISIBILITY = 3;

@@ -1,0 +1,78 @@
+@import '../../../styles/variables';
+
+
+.container {
+    position: absolute;
+    transform: translateY(-80%);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: transform 0.4s ease, opacity 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 15 13;
+}
+
+.content {
+    background: $color-bg-modal;
+    border-radius: 8px;
+    padding: 30 45;
+    width: 200px;
+    height: 211px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transform: translateY(40px);
+    opacity: 0;
+    animation: modalSlideUp 0.35s ease forwards;
+    font-size: 16;
+    color: #FFF;
+}
+
+.colors {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.color {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    cursor: pointer;
+    position: relative;
+
+    &::after {
+        content: '';
+        position: absolute;
+        inset: -4px;
+        border-radius: 50%;
+        border: 2px solid #fff;
+        opacity: 0;
+        transform: scale(0.9);
+        transition: opacity 0.3s ease, transform 0.3s ease;
+        pointer-events: none;
+    }
+
+    &.selected::after {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes modalSlideUp {
+    from {
+        transform: translateY(40px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}

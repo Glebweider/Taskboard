@@ -1,0 +1,168 @@
+@import '@Styles/variables';
+
+
+.editor div {
+    width: 100%;
+    min-height: 120px;
+    max-height: 640px;
+}
+
+.closeButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12;
+    color: #000;
+    border-radius: 8px;
+    background-color: $color-error;
+    width: 90px;
+    height: 24px;
+    cursor: pointer;
+}
+
+.createButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12;
+    color: #000;
+    border-radius: 8px;
+    background-color: $color-accent;
+    width: 90px;
+    height: 24px;
+    cursor: pointer;
+}
+
+.container {
+    margin: 10 40 30 40;
+    border: 1px solid #333;
+    border-radius: 12px;
+    padding: 12 0px;
+
+    div {
+        outline: none !important;
+        overflow-x: auto;
+        white-space: normal;
+
+        p {
+            margin-bottom: 0.3rem;
+            font-size: 14px;
+            font-weight: lighter;
+        }
+
+        ul {
+            margin-left: 20px;
+            list-style: disc;
+        }
+
+        ol {
+            margin-left: 20px;
+            list-style: decimal;
+        }
+
+        img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 0.4rem;
+        }
+    }
+
+    .ProseMirror {
+        outline: none !important;
+        color: #e5e5e5;
+        height: 100%;
+        line-height: 1.6;
+
+        p strong {
+            margin-bottom: 0.15rem;
+            font-size: 14px;
+        }
+
+        ul {
+            margin-left: 20px;
+            list-style: disc;
+        }
+
+        ol {
+            margin-left: 20px;
+            list-style: decimal;
+        }
+
+        img {
+            min-height: 40%;
+            max-height: 40%;
+            display: block;
+            border-radius: 10px;
+        }
+    }
+
+    .editorToolbarContainer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 12px;
+        border-top: 1px solid #333;
+    }
+
+    .editorToolbar {
+        margin-left: 17px;
+        display: flex;
+        gap: 5px;
+
+        .toolbarBtn {
+            width: 26px;
+            height: 26px;
+            border-radius: 6px;
+            cursor: pointer;
+
+            rect {
+                fill: $color-bg-secondary;
+                stroke: #ACACAC;
+                transition: 0.15s;
+            }
+
+            path {
+                fill: #ACACAC;
+                transition: 0.15s;
+            }
+
+            &:hover {
+                rect {
+                    fill: $color-primary;
+                    stroke: $color-primary;
+                }
+
+                path {
+                    fill: $color-bg-default;
+                }
+            }
+
+            &.active {
+                rect {
+                    fill: $color-primary;
+                    stroke: $color-primary;
+                }
+
+                path {
+                    fill: $color-bg-default;
+                }
+            }
+        }
+
+        .toolbarImageBtn {
+            width: 26px;
+            height: 26px;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+    }
+
+    .editorActions {
+        display: flex;
+        justify-content: flex-end;
+        gap: 12px;
+        margin-right: 17px;
+    }
+}

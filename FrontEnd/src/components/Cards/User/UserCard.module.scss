@@ -1,0 +1,52 @@
+@import '@Styles/variables';
+
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    min-height: 50px;
+    max-height: 50px;
+    z-index: 20;
+    position: relative;
+}
+
+.content {
+    display: flex;
+    align-items: center;
+
+    .avatar {
+        border: $color-accsess 2px solid;
+    }
+
+    span {
+        font-size: 14;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 120px;
+    }
+
+    text {
+        font-size: 12;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 120px;
+        color: $color-hr;
+    }
+
+    .dataContainer {
+        display: flex;
+        flex-direction: column;
+        margin-left: 15px;
+        gap: 4px;
+    }
+}
+
+.buttonEdit {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}

@@ -1,0 +1,97 @@
+@import '@Styles/variables';
+
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: $color-bg-secondary;
+    cursor: pointer;
+    min-width: 202px;
+    max-width: 202px;
+    min-height: 90px;
+    max-height: 90px;
+    padding: 14 14 8 14;
+    border-radius: 8px;
+}
+
+.contentHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.title {
+    font-size: 15;
+    color: $color-primary;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 38px;
+    max-height: 38px;
+}
+
+.dueDate {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10;
+    color: $color-bg-modal;
+    background-color: $color-orange;
+    height: 18px;
+    width: 60px;
+    border-radius: 4px;
+
+    &.red {
+        background-color: $color-error;
+    }
+
+    &.orange {
+        background-color: $color-orange;
+    }
+
+    &.green {
+        background-color: $color-accsess;
+    }
+
+    &.disable {
+        background-color: $color-hr;
+        color: #000;
+    }
+}
+
+.createDate {
+    color: $color-hr;
+    font-size: 11;
+    margin-top: 3px;
+}
+
+hr {
+    width: 100%;
+    height: 1px;
+    border-radius: 5px;
+    margin-top: 3px;
+}
+
+.users {
+    &.red img {
+        border: 2px solid $color-error;
+    }
+
+    &.orange img {
+        border: 2px solid $color-orange;
+    }
+
+    &.green img {
+        border: 2px solid $color-accsess;
+    }
+
+    &.disable img {
+        border: 2px solid $color-hr;
+    }
+}
